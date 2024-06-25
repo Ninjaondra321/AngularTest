@@ -1,1 +1,27 @@
-<p>calculator works!</p>
+
+<h2 >Calculator</h2>
+
+<input type="number" id="numberInput1" name="numberInput1" (input)="updateValue($event)" >
+
+<select name="operatorSelect" id="operatorSelect" (input)="updateValue($event)">
+    @for (operator of operators; track operator) {
+        <option value="{{operator}}">{{operator}}</option>
+    }
+</select>
+
+<input type="number" id="numberInput2" name="numberInput2" (input)="updateValue($event)" >
+<button (click)="calculate()">
+    Calculate
+</button>
+
+<br>
+
+@if (result) {
+
+    <!-- <div *ngIf="result != undefined"> -->
+        
+        <p >
+            Result is: <b>{{result}}</b>
+    </p>
+<!-- </div> -->
+}

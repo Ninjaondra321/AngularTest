@@ -1,12 +1,61 @@
 import { Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @Component({
-  selector: 'app-calculator',
-  standalone: true,
-  imports: [],
+  selector: 'app-bmi-calculator',
   templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.css'
+  styleUrls: ['./calculator.component.css']
 })
+
 export class CalculatorComponent {
+
+  operators: string[] = ["+", "-", "*", "/"];
+
+  number1 = 1;
+  number2 = 1;
+  selectedOperator = "+";
+  result?: number = undefined;
+
+  updateValue(event: Event) {
+    const element = event.target as HTMLInputElement;
+    const value =  element.value
+
+    switch (element.id) {
+      case "numberInput1":
+        this.number1 =  parseFloat(value);
+        break;
+      case "numberInput2":
+        this.number2 =  parseFloat(value);
+        break;
+
+      case "operatorSelect":
+        this.selectedOperator = value;
+        break;
+
+      default:
+        console.error("Id was not found, or it wasn't paired to any variable")
+        break;
+    }
+
+
+  }
+
+  calculate() {
+    this.result = 15;
+    switch(this.selectedOperator) {
+      case "+":
+        this.result = this.number1 + this.number2;
+        return;
+      case "-":
+        this.result = this.number1 - this.number2;
+        return;
+      case "*":
+        this.result = this.number1 * this.number2;
+        return;
+      case "/":
+        this.result = this.number1 / this.number2;
+        return;
+    }
+  }
 
 }
