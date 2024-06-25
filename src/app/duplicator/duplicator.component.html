@@ -1,8 +1,12 @@
 <p>duplicator works!</p>
 
 <label for="duplInput">Něco napiš: </label>
-<input id="duplInput" name="duplInput" type="text" (input)="updateNapis($event)" [value]="napis" />
+<input id="duplInput" name="duplInput" type="text" (input)="updateNapis($event)" />
+
+<input type="number" name="myNumber" id="myNumber" (input)="updateMyNumber($event)" >
 
 <h3>
-    Napsal jsi {{napis}}
+    Napsal jsi: {{napis}}
+    <br>
+    Cislo je: {{cislo}}
 </h3>

@@ -9,19 +9,22 @@ import { Component, Input } from '@angular/core';
 })
 export class DuplicatorComponent {
   napis: string = "";
+  cislo?: number = undefined;
 
 
   updateNapis(event: Event) {
-    
+
     const inputElement = event.target as HTMLInputElement;
     const inputValue = inputElement.value;
-    console.log('Input value:', inputValue);
-
     this.napis = inputValue;
-
-
-    // console.log(event.target.value);
-    // this.napis = String(targetInput);
+  
   } 
+
+  updateMyNumber(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const inputValue = inputElement.value;
+
+    this.cislo = Number.parseFloat(inputValue);
+  }
 
 }
