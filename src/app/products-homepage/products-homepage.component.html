@@ -3,9 +3,17 @@
 
 
 <input type="search" name="productSearch" id="productSearch" (input)="udpateSearchText($event)">
-<button
-(click)="search()"
->Search</button>
 
+<button (click)="search()">Search</button>
 
+<br>
+<br>
+<br>
 
+@for (product of productsList; track product) {
+    <app-product-card (closeCard)="closeCard($event)" [id]="product.id" productName="{{product.title}}" productDescription="{{ product.description + ' KONEC'}}"></app-product-card>
+}
+
+@if (productsList.length == 0) {
+    <button (click)="populateWithProducts()">Put cards</button>
+}
