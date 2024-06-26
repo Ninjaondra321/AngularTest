@@ -1,0 +1,13 @@
+.closed {
+    display: none;
+}
+p {
+    color: red;
+}
+
+div {
+    border: blue 1px solid;
+    padding: 5px;
+    border-radius: 15px;
+    width: fit-content;
+}
