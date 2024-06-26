@@ -1,3 +1,16 @@
 body  {
     background-color: red !important;
 }
+
+div {
+    background-color: blueviolet;
+}
+
+input, select{
+    color: brown;
+    background-color: aquamarine;
+}
+
+b {
+    color: #0a0e29;
+}

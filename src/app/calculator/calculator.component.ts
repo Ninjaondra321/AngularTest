@@ -1,18 +1,20 @@
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-bmi-calculator',
   templateUrl: './calculator.component.html',
-  styleUrls: ['./calculator.component.css']
+  styleUrls: ['./calculator.component.css'],
+  
 })
 
 export class CalculatorComponent {
 
   operators: string[] = ["+", "-", "*", "/"];
 
-  number1 = 1;
-  number2 = 1;
+  number1: number = 0;
+  number2: number = 0;
   selectedOperator = "+";
   result?: number = undefined;
 
@@ -42,6 +44,7 @@ export class CalculatorComponent {
 
   calculate() {
     this.result = 15;
+    
     switch(this.selectedOperator) {
       case "+":
         this.result = this.number1 + this.number2;
